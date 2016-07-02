@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace CapNetStandard
+namespace CAPNet
 {
     [DebuggerDisplay("{DisplayName} - {Value}")]
     public class Enumeration<TEnumeration> : Enumeration<TEnumeration, int>
@@ -138,7 +138,7 @@ namespace CapNetStandard
 
             if (!TryParse(predicate, out result))
             {
-                string message = string.Format("'{0}' is not a valid {1} in {2}", value, description, typeof(TEnumeration));
+                var message = string.Format("'{0}' is not a valid {1} in {2}", value, description, typeof(TEnumeration));
                 throw new ArgumentException(message, nameof(value));
             }
 

@@ -14,13 +14,6 @@ namespace CAPNet
         private static List<string> elements;
         private static string representation;
 
-        private enum States
-        {
-            BETWEEN_ELEMENTS = 0,
-            IN_SPACE_CONTAINING_ELEMENTS = 1,
-            IN_ELEMENTS_WITH_NO_SPACE = 2
-        }
-
         /// <summary>
         /// Multiple space-delimited elements MAY be included.
         /// Elements including whitespace MUST be enclosed in double-quotes.
@@ -39,20 +32,20 @@ namespace CAPNet
             for (currentPosition = 0; currentPosition < representation.Length; currentPosition++)
             {
                 char currentChar = representation[currentPosition];
-                switch (currentState)
+                if (currentState == States.BETWEEN_ELEMENTS)
                 {
-                    case States.BETWEEN_ELEMENTS:
-                        currentState = BetweenElementsState(currentState, currentChar);
-                        break;
-
-                    case States.IN_ELEMENTS_WITH_NO_SPACE:
-                        currentState = InAddressWithNoSpaceState(currentState, currentChar);
-                        break;
-
-                    case States.IN_SPACE_CONTAINING_ELEMENTS:
-                        currentState = InSpaceContainingAddressState(currentState, currentChar);
-                        break;
-                    default:
+                    currentState = BetweenElementsState(currentState, currentChar);
+                }
+                else if (currentState == States.IN_ELEMENTS_WITH_NO_SPACE)
+                {
+                    currentState = InAddressWithNoSpaceState(currentState, currentChar);
+                }
+                else if (currentState == States.IN_SPACE_CONTAINING_ELEMENTS)
+                {
+                    currentState = InSpaceContainingAddressState(currentState, currentChar);
+                }
+                else
+                {
                         throw new SpaceDelimitedElementsParserException($"Invalid parser state: {currentState}");
                 }
             }
@@ -137,6 +130,20 @@ namespace CAPNet
         private static bool IsQuote(this char tested)
         {
             return tested == '"';
+        }
+
+        private class States : Enumeration<States>
+        {
+#pragma warning disable SA1310 // Field names must not contain underscore
+            public static readonly States BETWEEN_ELEMENTS = new States(0, "Between elements");
+            public static readonly States IN_SPACE_CONTAINING_ELEMENTS = new States(1, "In space containing elements");
+            public static readonly States IN_ELEMENTS_WITH_NO_SPACE = new States(2, "In elements with no space");
+#pragma warning restore SA1310 // Field names must not contain underscore
+
+            private States(int value, string displayName)
+                : base(value, displayName)
+            {
+            }
         }
     }
 }
