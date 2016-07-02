@@ -13,18 +13,18 @@ namespace CAPNet
         /// <summary>
         ///
         /// </summary>
-        public T Entity
+        /// <param name="entity"></param>
+        protected Validator(T entity)
         {
-            get { return entity; }
+            this.entity = entity;
         }
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="entity"></param>
-        protected Validator(T entity)
+        public T Entity
         {
-            this.entity = entity;
+            get { return entity; }
         }
 
         /// <summary>

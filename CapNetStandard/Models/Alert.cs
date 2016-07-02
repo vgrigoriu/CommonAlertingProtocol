@@ -8,6 +8,11 @@ namespace CAPNet.Models
     /// </summary>
     public class Alert
     {
+        private readonly ICollection<Info> info;
+        private readonly ICollection<string> addresses;
+        private readonly ICollection<string> incidents;
+        private readonly ICollection<string> references;
+
         /// <summary>
         ///
         /// </summary>
@@ -270,11 +275,6 @@ namespace CAPNet.Models
                 return incidents;
             }
         }
-
-        private readonly ICollection<Info> info;
-        private readonly ICollection<string> addresses;
-        private readonly ICollection<string> incidents;
-        private readonly ICollection<string> references;
 
         /// <summary>
         /// The container for all component parts of the info sub-element of the alert message.

@@ -24,6 +24,11 @@ namespace CAPNet.Models
     /// </remarks>
     public class Info
     {
+        /// <summary>
+        ///
+        /// </summary>
+        public static readonly string DefaultLanguage = "en-US";
+
         private string language;
 
         private readonly ICollection<Parameter> parameters;
@@ -37,11 +42,6 @@ namespace CAPNet.Models
         private readonly ICollection<Area> areas;
 
         private readonly ICollection<ResponseType> responseTypes;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static readonly string DefaultLanguage = "en-US";
 
         /// <summary>
         ///

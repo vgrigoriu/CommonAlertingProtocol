@@ -11,16 +11,7 @@ namespace CAPNet
     /// </summary>
     public class AlertValidator
     {
-
         private readonly Alert alert;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Alert Alert
-        {
-            get { return alert; }
-        }
 
         /// <summary>
         ///
@@ -29,6 +20,14 @@ namespace CAPNet
         public AlertValidator(Alert alert)
         {
             this.alert = alert;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Alert Alert
+        {
+            get { return alert; }
         }
 
         /// <summary>

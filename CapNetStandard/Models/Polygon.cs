@@ -12,12 +12,6 @@ namespace CAPNet.Models
         private readonly List<Coordinate> coordinates;
 
         /// <summary>
-        /// list of [WGS 84] coordinate pairs
-        /// </summary>
-        public IEnumerable<Coordinate> Coordinates => coordinates;
-
-
-        /// <summary>
         ///
         /// </summary>
         /// <param name="stringRepresentation">The geographic polygon is represented by a whitespace-delimited list of [WGS 84] coordinate pairs</param>
@@ -30,6 +24,11 @@ namespace CAPNet.Models
                            select new Coordinate(coordinate))
                           .ToList();
         }
+
+        /// <summary>
+        /// list of [WGS 84] coordinate pairs
+        /// </summary>
+        public IEnumerable<Coordinate> Coordinates => coordinates;
 
         /// <summary>
         ///

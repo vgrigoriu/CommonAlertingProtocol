@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 
-
 namespace CAPNet.Models
 {
     /// <summary>

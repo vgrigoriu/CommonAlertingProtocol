@@ -156,6 +156,7 @@
     <Rule Id="RECS0141" Action="Warning" />
     <Rule Id="RECS0142" Action="Warning" />
     <Rule Id="RECS0144" Action="Warning" />
+    <Rule Id="RECS0145" Action="None" />
     <Rule Id="RECS0148" Action="Warning" />
     <Rule Id="RECS0152" Action="Warning" />
     <Rule Id="RECS0153" Action="Warning" />
@@ -165,6 +166,7 @@
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1131" Action="None" />
     <Rule Id="SA1633" Action="None" />
     <Rule Id="SA1652" Action="None" />
     <Rule Id="SX1101" Action="Warning" />

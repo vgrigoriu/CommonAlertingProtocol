@@ -8,6 +8,17 @@ namespace CAPNet
     /// </summary>
     public class MimeTypeValidator : Validator<Resource>
     {
+        private static readonly ICollection<string> topLevelMediaType = new List<string>
+        {
+            "text",
+            "image",
+            "audio",
+            "video",
+            "application",
+            "multipart",
+            "message"
+        };
+
         /// <summary>
         ///
         /// </summary>
@@ -26,17 +37,6 @@ namespace CAPNet
                     yield return new MimeTypeError();
             }
         }
-
-        private static readonly ICollection<string> topLevelMediaType = new List<string>
-        {
-            "text",
-            "image",
-            "audio",
-            "video",
-            "application",
-            "multipart",
-            "message"
-        };
 
         /// <summary>
         ///

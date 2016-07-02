@@ -21,6 +21,17 @@ namespace CAPNet
         /// <summary>
         ///
         /// </summary>
+        public override bool IsValid
+        {
+            get
+            {
+                return !Errors.Any();
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
         public override IEnumerable<Error> Errors
         {
             get
@@ -45,17 +56,6 @@ namespace CAPNet
             return from validator in infoValidators
                    from error in validator.Errors
                    select error;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public override bool IsValid
-        {
-            get
-            {
-                return !Errors.Any();
-            }
         }
     }
 }

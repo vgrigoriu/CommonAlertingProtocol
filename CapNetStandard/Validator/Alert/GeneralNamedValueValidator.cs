@@ -11,11 +11,6 @@ namespace CAPNet.Validator.Alert
     public class GeneralNamedValueValidator<T> : Validator<T>
         where T : NamedValue
     {
-        private static Error GetError()
-        {
-            return new NamedValueError<T>();
-        }
-
         /// <summary>
         ///
         /// </summary>
@@ -41,5 +36,10 @@ namespace CAPNet.Validator.Alert
         ///
         /// </summary>
         public override bool IsValid => Entity.Value != null && Entity.ValueName != null;
+
+        private static Error GetError()
+        {
+            return new NamedValueError<T>();
+        }
     }
 }

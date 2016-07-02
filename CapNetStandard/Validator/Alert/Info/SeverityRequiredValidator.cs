@@ -9,7 +9,6 @@ namespace CAPNet
     /// </summary>
     public class SeverityRequiredValidator : Validator<Info>
     {
-
         /// <summary>
         ///
         /// </summary>

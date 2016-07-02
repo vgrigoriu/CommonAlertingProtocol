@@ -8,17 +8,18 @@ namespace CAPNet
     /// </summary>
     public static class SpaceDelimitedElementsParser
     {
+        private static States currentState;
+        private static StringBuilder partialElement;
+        private static int currentPosition;
+        private static List<string> elements;
+        private static string representation;
+
         private enum States
         {
             BETWEEN_ELEMENTS = 0,
             IN_SPACE_CONTAINING_ELEMENTS = 1,
             IN_ELEMENTS_WITH_NO_SPACE = 2
         }
-        private static States currentState;
-        private static StringBuilder partialElement;
-        private static int currentPosition;
-        private static List<string> elements;
-        private static string representation;
 
         /// <summary>
         ///
