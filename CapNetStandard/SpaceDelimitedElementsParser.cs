@@ -7,12 +7,19 @@ namespace CAPNet
     /// This class parses a string containing space-delimited elements, e.g.
     /// «one two "three four"» will be splited into «one», «two», and «three four».
     /// </summary>
-    public static class SpaceDelimitedElementsParser
+    public class SpaceDelimitedElementsParser
     {
-        private static StringBuilder partialElement;
-        private static int currentPosition;
-        private static List<string> elements;
-        private static string representation;
+        private readonly StringBuilder partialElement;
+        private readonly List<string> elements;
+        private readonly string representation;
+        private int currentPosition;
+
+        public SpaceDelimitedElementsParser(string representation)
+        {
+            this.representation = representation;
+            partialElement = new StringBuilder();
+            elements = new List<string>();
+        }
 
         /// <summary>
         /// Multiple space-delimited elements MAY be included.
@@ -20,13 +27,9 @@ namespace CAPNet
         ///
         /// See the tests for examples.
         /// </summary>
-        /// <param name="value">the string to parse</param>
         /// <returns>Elements in a IEnumerable&lt;string></returns>
-        public static IEnumerable<string> GetElements(this string value)
+        public IEnumerable<string> GetElements()
         {
-            representation = value;
-            elements = new List<string>();
-            partialElement = new StringBuilder();
             var currentState = States.BETWEEN_ELEMENTS;
 
             for (currentPosition = 0; currentPosition < representation.Length; currentPosition++)
@@ -46,14 +49,14 @@ namespace CAPNet
                 }
                 else
                 {
-                        throw new SpaceDelimitedElementsParserException($"Invalid parser state: {currentState}");
+                    throw new SpaceDelimitedElementsParserException($"Invalid parser state: {currentState}");
                 }
             }
 
             return elements;
         }
 
-        private static States InSpaceContainingAddressState(States currentState, char currentChar)
+        private States InSpaceContainingAddressState(States currentState, char currentChar)
         {
             if (currentChar.IsQuote())
             {
@@ -71,7 +74,7 @@ namespace CAPNet
             return currentState;
         }
 
-        private static States InAddressWithNoSpaceState(States currentState, char currentChar)
+        private States InAddressWithNoSpaceState(States currentState, char currentChar)
         {
             if (currentChar.IsElementCharacter())
             {
@@ -95,7 +98,7 @@ namespace CAPNet
             return currentState;
         }
 
-        private static States BetweenElementsState(States currentState, char currentChar)
+        private States BetweenElementsState(States currentState, char currentChar)
         {
             if (currentChar.IsQuote())
             {
@@ -117,21 +120,6 @@ namespace CAPNet
             return currentState;
         }
 
-        private static bool IsElementCharacter(this char tested)
-        {
-            return !tested.IsQuote() && !tested.IsSpace();
-        }
-
-        private static bool IsSpace(this char tested)
-        {
-            return tested == ' ';
-        }
-
-        private static bool IsQuote(this char tested)
-        {
-            return tested == '"';
-        }
-
         private class States : Enumeration<States>
         {
 #pragma warning disable SA1310 // Field names must not contain underscore
@@ -144,6 +132,26 @@ namespace CAPNet
                 : base(value, displayName)
             {
             }
+        }
+    }
+
+#pragma warning disable SA1402 // File may only contain a single class
+    internal static class CharExtensions
+#pragma warning restore SA1402 // File may only contain a single class
+    {
+        public static bool IsElementCharacter(this char tested)
+        {
+            return !tested.IsQuote() && !tested.IsSpace();
+        }
+
+        public static bool IsSpace(this char tested)
+        {
+            return tested == ' ';
+        }
+
+        public static bool IsQuote(this char tested)
+        {
+            return tested == '"';
         }
     }
 }
