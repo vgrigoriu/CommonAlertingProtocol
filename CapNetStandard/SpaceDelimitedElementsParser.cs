@@ -166,24 +166,4 @@ namespace CAPNet
             }
         }
     }
-
-#pragma warning disable SA1402 // File may only contain a single class
-    internal static class CharExtensions
-#pragma warning restore SA1402 // File may only contain a single class
-    {
-        public static bool IsElementCharacter(this char tested)
-        {
-            return !tested.IsQuote() && !tested.IsSpace();
-        }
-
-        public static bool IsSpace(this char tested)
-        {
-            return tested == ' ';
-        }
-
-        public static bool IsQuote(this char tested)
-        {
-            return tested == '"';
-        }
-    }
 }

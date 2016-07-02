@@ -47,6 +47,7 @@
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharExtensions.cs" />
     <Compile Include="CollectionExtensions.cs" />
     <Compile Include="Enumeration.cs" />
     <Compile Include="Models\Alert.cs" />
