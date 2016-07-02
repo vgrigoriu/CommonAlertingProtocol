@@ -34,7 +34,7 @@ namespace CAPNet
         {
             get
             {
-                return Enum.IsDefined(typeof(Scope), this.Entity.Scope);
+                return Enum.IsDefined(typeof(Scope), Entity.Scope);
             }
         }
     }

@@ -34,7 +34,7 @@ namespace CAPNet
         {
             get
             {
-                return Enum.IsDefined(typeof(MessageType), this.Entity.MessageType);
+                return Enum.IsDefined(typeof(MessageType), Entity.MessageType);
             }
         }
     }

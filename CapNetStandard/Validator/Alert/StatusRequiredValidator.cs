@@ -22,7 +22,7 @@ namespace CAPNet
         {
             get
             {
-                return Enum.IsDefined(typeof(Status), this.Entity.Status);
+                return Enum.IsDefined(typeof(Status), Entity.Status);
             }
         }
 

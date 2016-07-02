@@ -44,6 +44,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
     <None Include="CapNetStandard.ruleset" />
     <None Include="project.json" />
+    <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionExtensions.cs" />

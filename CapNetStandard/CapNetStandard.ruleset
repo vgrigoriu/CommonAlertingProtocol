@@ -68,6 +68,22 @@
     <Rule Id="CA2241" Action="Warning" />
     <Rule Id="CA2242" Action="Warning" />
   </Rules>
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
+    <Rule Id="CS8019" Action="Warning" />
+    <Rule Id="CS8020" Action="Warning" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.EditorFeatures" RuleNamespace="Microsoft.CodeAnalysis.CSharp.EditorFeatures">
+    <Rule Id="UseAutoProperty" Action="Warning" />
+    <Rule Id="UseAutoPropertyFadedToken" Action="Warning" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Features" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Features">
+    <Rule Id="IDE0001" Action="Warning" />
+    <Rule Id="IDE0002" Action="Warning" />
+    <Rule Id="IDE0003" Action="Warning" />
+    <Rule Id="IDE0004" Action="Warning" />
+    <Rule Id="IDE0005" Action="Warning" />
+    <Rule Id="IDE1005" Action="Warning" />
+  </Rules>
   <Rules AnalyzerId="RefactoringEssentials" RuleNamespace="RefactoringEssentials">
     <Rule Id="RECS0002" Action="Warning" />
     <Rule Id="RECS0004" Action="Warning" />
@@ -146,5 +162,10 @@
     <Rule Id="RECS0158" Action="Warning" />
     <Rule Id="RECS0159" Action="Warning" />
     <Rule Id="RECS0164" Action="Warning" />
+  </Rules>
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1652" Action="None" />
+    <Rule Id="SX1101" Action="Warning" />
   </Rules>
 </RuleSet>
