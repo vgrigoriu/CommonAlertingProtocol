@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    class DigestError : Error
+    public class DigestError : Error
     {
     }
 }

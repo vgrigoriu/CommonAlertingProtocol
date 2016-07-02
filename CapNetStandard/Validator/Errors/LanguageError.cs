@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    class LanguageError : Error
+    public class LanguageError : Error
     {
     }
 }

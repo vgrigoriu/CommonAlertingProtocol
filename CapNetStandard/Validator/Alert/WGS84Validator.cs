@@ -8,10 +8,10 @@ namespace CAPNet
     /// </summary>
     public class WGS84Validator : Validator<Coordinate>
     {
-        private const int minLongitude = -180;
-        private const int maxLongitude = 180;
-        private const int minLatitude = -90;
-        private const int maxLatitude = 90;
+        private const int MinLongitude = -180;
+        private const int MaxLongitude = 180;
+        private const int MinLatitude = -90;
+        private const int MaxLatitude = 90;
 
         /// <summary>
         ///
@@ -39,8 +39,8 @@ namespace CAPNet
         {
             get
             {
-                var longitudeIsValid = minLongitude <= Entity.Longitude && Entity.Longitude <= maxLongitude;
-                var latitudeIsValid = minLatitude <= Entity.Latitude && Entity.Latitude <= maxLatitude;
+                var longitudeIsValid = MinLongitude <= Entity.Longitude && Entity.Longitude <= MaxLongitude;
+                var latitudeIsValid = MinLatitude <= Entity.Latitude && Entity.Latitude <= MaxLatitude;
 
                 return longitudeIsValid && latitudeIsValid;
             }

@@ -8,7 +8,7 @@ namespace CAPNet
     /// </summary>
     public class HeadlineValidator : Validator<Info>
     {
-        private const int maxLengthHeadline = 160;
+        private const int MaxLengthHeadline = 160;
 
         /// <summary>
         ///
@@ -38,7 +38,7 @@ namespace CAPNet
             {
                 if (Entity.Headline == null)
                     return true;
-                return Entity.Headline.Length <= maxLengthHeadline;
+                return Entity.Headline.Length <= MaxLengthHeadline;
             }
         }
     }

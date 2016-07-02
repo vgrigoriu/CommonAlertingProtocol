@@ -8,14 +8,14 @@
         /// <summary>
         ///
         /// </summary>
-        v1_0,
+        V1_0,
         /// <summary>
         ///
         /// </summary>
-        v1_1,
+        V1_1,
         /// <summary>
         ///
         /// </summary>
-        v1_2
+        V1_2
     }
 }

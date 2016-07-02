@@ -29,8 +29,6 @@ namespace CAPNet.Models
         /// </summary>
         public static readonly string DefaultLanguage = "en-US";
 
-        private string language;
-
         private readonly ICollection<Parameter> parameters;
 
         private readonly ICollection<EventCode> eventCodes;
@@ -42,6 +40,8 @@ namespace CAPNet.Models
         private readonly ICollection<Area> areas;
 
         private readonly ICollection<ResponseType> responseTypes;
+
+        private string language;
 
         /// <summary>
         ///

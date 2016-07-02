@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CAPNet.Models;
 
 namespace CAPNet
@@ -8,7 +9,7 @@ namespace CAPNet
     /// </summary>
     public class MimeTypeValidator : Validator<Resource>
     {
-        private static readonly ICollection<string> topLevelMediaType = new List<string>
+        private static readonly IReadOnlyCollection<string> TopLevelMediaTypes = new List<string>
         {
             "text",
             "image",
@@ -57,7 +58,7 @@ namespace CAPNet
 
             var splittedMimeType = Entity.MimeType.Split('/');
 
-            return topLevelMediaType.Contains(splittedMimeType[0]);
+            return TopLevelMediaTypes.Contains(splittedMimeType[0]);
         }
     }
 }
