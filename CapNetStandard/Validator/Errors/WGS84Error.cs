@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class WGS84Error : Error
+    public class Wgs84Error : Error
     {
     }
 }

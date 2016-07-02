@@ -8,7 +8,11 @@ namespace CAPNet
     /// </summary>
     public static class SpaceDelimitedElementsParser
     {
+#pragma warning disable S1450 // Private fields only used as local variables in methods should become local variables
+        // Looks like we could remove this and replace it with a parameter / return value. This should also
+        // fix the if / else if constructions below.
         private static States currentState;
+#pragma warning restore S1450 // Private fields only used as local variables in methods should become local variables
         private static StringBuilder partialElement;
         private static int currentPosition;
         private static List<string> elements;
@@ -68,7 +72,9 @@ namespace CAPNet
                     elements.Add(partialElement.ToString());
                 }
             }
+#pragma warning disable S126 // "if ... else if" constructs should end with "else" clause
             else if (currentChar.IsQuote())
+#pragma warning restore S126 // "if ... else if" constructs should end with "else" clause
             {
                 elements.Add(partialElement.ToString());
                 partialElement.Clear();
@@ -86,7 +92,9 @@ namespace CAPNet
                     elements.Add(partialElement.ToString());
                 }
             }
+#pragma warning disable S126 // "if ... else if" constructs should end with "else" clause
             else if (currentChar.IsSpace())
+#pragma warning restore S126 // "if ... else if" constructs should end with "else" clause
             {
                 elements.Add(partialElement.ToString());
                 partialElement.Clear();
@@ -100,7 +108,9 @@ namespace CAPNet
             {
                 currentState = States.IN_SPACE_CONTAINING_ELEMENTS;
             }
+#pragma warning disable S126 // "if ... else if" constructs should end with "else" clause
             else if (currentChar.IsElementCharacter())
+#pragma warning restore S126 // "if ... else if" constructs should end with "else" clause
             {
                 currentState = States.IN_ELEMENTS_WITH_NO_SPACE;
                 partialElement.Append(currentChar);

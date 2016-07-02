@@ -26,7 +26,7 @@ namespace CAPNet
             get
             {
                 var wgs84Validators = from coordinate in Entity.Coordinates
-                                      select new WGS84Validator(coordinate);
+                                      select new Wgs84Validator(coordinate);
 
                 return from wgs84Validator in wgs84Validators
                        from errors in wgs84Validator.Errors
