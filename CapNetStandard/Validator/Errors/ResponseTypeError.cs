@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class ResponseTypeError:Error
+    public class ResponseTypeError : Error
     {
     }
 }

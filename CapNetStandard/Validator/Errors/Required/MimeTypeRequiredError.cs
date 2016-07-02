@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class MimeTypeRequiredError:RequiredFieldError
+    public class MimeTypeRequiredError : RequiredFieldError
     {
     }
 }

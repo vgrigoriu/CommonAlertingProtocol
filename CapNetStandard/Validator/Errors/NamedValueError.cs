@@ -7,7 +7,7 @@ namespace CAPNet.Validator.Errors
     /// </summary>
     /// <typeparam name="T">The class inheriting from NamedValue this is an error for</typeparam>
     public class NamedValueError<T> : Error
-        where T: NamedValue
+        where T : NamedValue
     {
         /// <summary>
         /// Provide a string representation of this error

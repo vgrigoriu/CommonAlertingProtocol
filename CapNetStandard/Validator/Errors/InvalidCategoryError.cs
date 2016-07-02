@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class InvalidCategoryError:Error
+    public class InvalidCategoryError : Error
     {
     }
 }

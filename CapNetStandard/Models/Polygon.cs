@@ -24,7 +24,7 @@ namespace CAPNet.Models
         public Polygon(string stringRepresentation)
         {
             if (stringRepresentation == null) { throw new ArgumentNullException(nameof(stringRepresentation)); }
-            var stringCoordinates = stringRepresentation.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            var stringCoordinates = stringRepresentation.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             coordinates = (from coordinate in stringCoordinates
                            select new Coordinate(coordinate))

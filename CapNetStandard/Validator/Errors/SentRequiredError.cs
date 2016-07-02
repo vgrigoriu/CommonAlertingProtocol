@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class SentRequiredError:RequiredFieldError
+    public class SentRequiredError : RequiredFieldError
     {
     }
 }

@@ -66,7 +66,7 @@ namespace CAPNet
 
         private static DateTimeOffset? StripMiliseconds(DateTimeOffset? date)
         {
-            if(date!=null)
+            if (date != null)
                 return date.Value.AddMilliseconds(-date.Value.Millisecond);
 
             return null;

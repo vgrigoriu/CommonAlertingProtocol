@@ -366,14 +366,14 @@ namespace CAPNet
 
             var capNamespace = resourceElement.Name.Namespace;
 
-            //<resource>
+            // <resource>
             //    <resourceDesc>Image file (GIF)</resourceDesc>
             //    <mimeType>image/gif</mimeType>
             //    <size>1</size>
             //    <uri>http://www.dhs.gov/dhspublic/getAdvisoryImage</uri>
             //    <derefUri>derefUri</derefUri>
             //    <digest>digest</digest>
-            //</resource>
+            // </resource>
 
             var resourceDescNode = resourceElement.Element(capNamespace + "resourceDesc");
             if (resourceDescNode != null)

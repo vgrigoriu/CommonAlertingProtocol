@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class ResourceRequiredError:RequiredFieldError
+    public class ResourceRequiredError : RequiredFieldError
     {
     }
 }

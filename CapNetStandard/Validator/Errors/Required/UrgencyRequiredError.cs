@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class UrgencyRequiredError:RequiredFieldError
+    public class UrgencyRequiredError : RequiredFieldError
     {
     }
 }

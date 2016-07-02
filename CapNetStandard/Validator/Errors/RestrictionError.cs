@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class RestrictionError:Error
+    public class RestrictionError : Error
     {
     }
 }

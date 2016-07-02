@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class AlertError:Error
+    public class AlertError : Error
     {
     }
 }

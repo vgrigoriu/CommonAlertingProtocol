@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class SeverityRequiredError:RequiredFieldError
+    public class SeverityRequiredError : RequiredFieldError
     {
     }
 }

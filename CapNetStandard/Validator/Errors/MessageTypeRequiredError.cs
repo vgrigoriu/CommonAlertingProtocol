@@ -3,7 +3,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class MessageTypeRequiredError:RequiredFieldError
+    public class MessageTypeRequiredError : RequiredFieldError
     {
     }
 }

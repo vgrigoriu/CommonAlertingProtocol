@@ -23,7 +23,7 @@ namespace CAPNet
         {
             get
             {
-                return Enum.IsDefined(typeof(Severity),Entity.Severity);
+                return Enum.IsDefined(typeof(Severity), Entity.Severity);
             }
         }
 
