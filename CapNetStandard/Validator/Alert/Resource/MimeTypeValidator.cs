@@ -25,7 +25,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="resource"></param>
         public MimeTypeValidator(Resource resource)
-            : base(resource) { }
+            : base(resource)
+        {
+        }
 
         /// <summary>
         ///
@@ -35,7 +37,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new MimeTypeError();
+                }
             }
         }
 
@@ -46,7 +50,10 @@ namespace CAPNet
         {
             get
             {
-                if (Entity.MimeType == null) return false;
+                if (Entity.MimeType == null)
+                {
+                    return false;
+                }
 
                 return MimeTypeIsValid();
             }
@@ -54,7 +61,10 @@ namespace CAPNet
 
         private bool MimeTypeIsValid()
         {
-            if (!Entity.MimeType.Contains("/")) return false;
+            if (!Entity.MimeType.Contains("/"))
+            {
+                return false;
+            }
 
             var splittedMimeType = Entity.MimeType.Split('/');
 

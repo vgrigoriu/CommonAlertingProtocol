@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="info"></param>
         public CategoryRequiredValidator(Info info)
-            : base(info) { }
+            : base(info)
+        {
+        }
 
         /// <summary>
         ///
@@ -35,7 +37,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new CategoryRequiredError();
+                }
             }
         }
     }

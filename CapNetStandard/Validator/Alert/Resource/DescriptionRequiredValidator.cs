@@ -13,7 +13,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="resource"></param>
         public ResourceDescriptionRequiredValidator(Resource resource)
-            : base(resource) { }
+            : base(resource)
+        {
+        }
 
         /// <summary>
         ///
@@ -23,7 +25,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new ResourceDescriptionRequiredError();
+                }
             }
         }
 

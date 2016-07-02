@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="responseType"></param>
         public ResponseTypeValidator(ResponseType responseType)
-            : base(responseType) { }
+            : base(responseType)
+        {
+        }
 
         /// <summary>
         ///
@@ -35,7 +37,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new ResponseTypeError();
+                }
             }
         }
     }

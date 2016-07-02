@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="polygon"></param>
         public PolygonWithFirstCoordinatePairEqualToLastCoordinatePairValidator(Polygon polygon)
-            : base(polygon) { }
+            : base(polygon)
+        {
+        }
 
         /// <summary>
         ///
@@ -37,7 +39,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new PolygonWithFirstCoordinatePairEqualToLastCoordinatePairError();
+                }
             }
         }
     }

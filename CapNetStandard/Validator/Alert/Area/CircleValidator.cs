@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="circle"></param>
         public CircleValidator(Circle circle)
-            : base(circle) { }
+            : base(circle)
+        {
+        }
 
         /// <summary>
         ///
@@ -24,7 +26,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new WGS84Error();
+                }
             }
         }
 

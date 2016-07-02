@@ -92,7 +92,6 @@ namespace CAPNet
                 partialElement.Clear();
                 currentState = States.BETWEEN_ELEMENTS;
             }
-
         }
 
         private static void BetweenElementsState(char currentChar)
@@ -132,5 +131,4 @@ namespace CAPNet
             return tested.IsElementCharacter() || tested.IsSpace();
         }
     }
-
 }

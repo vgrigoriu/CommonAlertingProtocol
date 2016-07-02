@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="polygon"></param>
         public PolygonCoordinatesValidator(Polygon polygon)
-            : base(polygon) { }
+            : base(polygon)
+        {
+        }
 
         /// <summary>
         ///

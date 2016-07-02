@@ -13,7 +13,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="alert"></param>
         public NoteValidator(Alert alert)
-            : base(alert) { }
+            : base(alert)
+        {
+        }
 
         /// <summary>
         ///
@@ -23,7 +25,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new NoteError();
+                }
             }
         }
 
@@ -39,7 +43,10 @@ namespace CAPNet
                 var statusIsNotExercise = Entity.Status != Status.Exercise;
                 var messageTypeIsNotError = Entity.MessageType != MessageType.Error;
 
-                if (statusIsNotExercise && messageTypeIsNotError) return true;
+                if (statusIsNotExercise && messageTypeIsNotError)
+                {
+                    return true;
+                }
 
                 return !string.IsNullOrEmpty(Entity.Note);
             }

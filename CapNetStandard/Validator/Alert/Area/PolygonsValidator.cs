@@ -16,7 +16,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="area"></param>
         public PolygonsValidator(Area area)
-            : base(area) { }
+            : base(area)
+        {
+        }
 
         /// <summary>
         ///

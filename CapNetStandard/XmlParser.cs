@@ -168,7 +168,9 @@ namespace CAPNet
 
             var languageNode = infoElement.Element(capNamespace + "language");
             if (languageNode != null)
+            {
                 info.Language = languageNode.Value;
+            }
 
             var categoryNodes = infoElement.Elements(capNamespace + "category");
             var categories = from categoryNode in categoryNodes
@@ -326,7 +328,9 @@ namespace CAPNet
 
             var areaDescNode = areaElement.Element(capNamespace + "areaDesc");
             if (areaDescNode != null)
+            {
                 area.Description = areaDescNode.Value;
+            }
 
             var polygons = from polygonNode in areaElement.Elements(capNamespace + "polygon")
                            where polygonNode != null
@@ -352,11 +356,16 @@ namespace CAPNet
 
             var altitudeNode = areaElement.Element(capNamespace + "altitude");
             if (altitudeNode != null)
+            {
                 area.Altitude = TryParseInt(altitudeNode.Value);
+            }
 
             var ceilingNode = areaElement.Element(capNamespace + "ceiling");
             if (ceilingNode != null)
+            {
                 area.Ceiling = TryParseInt(ceilingNode.Value);
+            }
+
             return area;
         }
 
@@ -374,30 +383,41 @@ namespace CAPNet
             //    <derefUri>derefUri</derefUri>
             //    <digest>digest</digest>
             // </resource>
-
             var resourceDescNode = resourceElement.Element(capNamespace + "resourceDesc");
             if (resourceDescNode != null)
+            {
                 resource.Description = resourceDescNode.Value;
+            }
 
             var mimeTypeNode = resourceElement.Element(capNamespace + "mimeType");
             if (mimeTypeNode != null)
+            {
                 resource.MimeType = mimeTypeNode.Value;
+            }
 
             var sizeNode = resourceElement.Element(capNamespace + "size");
             if (sizeNode != null)
+            {
                 resource.Size = TryParseInt(sizeNode.Value);
+            }
 
             var uriNode = resourceElement.Element(capNamespace + "uri");
             if (uriNode != null)
+            {
                 resource.Uri = new Uri(uriNode.Value);
+            }
 
             var derefUriNode = resourceElement.Element(capNamespace + "derefUri");
             if (derefUriNode != null && IsBase64(derefUriNode.Value))
+            {
                 resource.DereferencedUri = Convert.FromBase64String(derefUriNode.Value);
+            }
 
             var digestNode = resourceElement.Element(capNamespace + "digest");
             if (digestNode != null)
+            {
                 resource.Digest = digestNode.Value;
+            }
 
             return resource;
         }
@@ -407,7 +427,10 @@ namespace CAPNet
             DateTimeOffset parsed;
             bool canBeParsed = DateTimeOffset.TryParse(tested, out parsed);
             if (canBeParsed)
+            {
                 return parsed;
+            }
+
             return null;
         }
 
@@ -416,7 +439,10 @@ namespace CAPNet
             int parsed;
             bool canBeParsed = int.TryParse(tested, out parsed);
             if (canBeParsed)
+            {
                 return parsed;
+            }
+
             return null;
         }
 
@@ -431,8 +457,6 @@ namespace CAPNet
             {
                 return false;
             }
-
         }
-
     }
 }

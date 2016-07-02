@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="alert"></param>
         public StatusRequiredValidator(Alert alert)
-            : base(alert) { }
+            : base(alert)
+        {
+        }
 
         /// <summary>
         ///
@@ -35,7 +37,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new StatusRequiredError();
+                }
             }
         }
     }

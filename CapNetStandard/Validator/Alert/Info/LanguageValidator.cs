@@ -15,7 +15,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="info"></param>
         public LanguageValidator(Info info)
-            : base(info) { }
+            : base(info)
+        {
+        }
 
         /// <summary>
         ///
@@ -25,7 +27,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new LanguageError();
+                }
             }
         }
 
@@ -38,7 +42,10 @@ namespace CAPNet
         {
             get
             {
-                if (string.IsNullOrEmpty(Entity.Language)) return true;
+                if (string.IsNullOrEmpty(Entity.Language))
+                {
+                    return true;
+                }
 
                 return CultureIsValid();
             }

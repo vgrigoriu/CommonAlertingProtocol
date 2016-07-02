@@ -13,7 +13,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="area"></param>
         public AreaDescriptionRequiredValidator(Area area)
-            : base(area) { }
+            : base(area)
+        {
+        }
 
         /// <summary>
         /// Area description should not be null or empty
@@ -34,9 +36,10 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new AreaDescriptionRequiredError();
+                }
             }
         }
-
     }
 }

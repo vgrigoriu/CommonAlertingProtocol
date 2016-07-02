@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="area"></param>
         public CirclesValidator(Area area)
-            : base(area) { }
+            : base(area)
+        {
+        }
 
         /// <summary>
         ///

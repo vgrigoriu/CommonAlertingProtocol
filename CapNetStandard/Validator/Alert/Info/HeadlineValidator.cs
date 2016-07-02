@@ -15,7 +15,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="info"></param>
         public HeadlineValidator(Info info)
-            : base(info) { }
+            : base(info)
+        {
+        }
 
         /// <summary>
         ///
@@ -25,7 +27,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new HeadlineError();
+                }
             }
         }
 
@@ -37,7 +41,10 @@ namespace CAPNet
             get
             {
                 if (Entity.Headline == null)
+                {
                     return true;
+                }
+
                 return Entity.Headline.Length <= MaxLengthHeadline;
             }
         }

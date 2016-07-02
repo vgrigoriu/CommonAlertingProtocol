@@ -9,18 +9,22 @@
         /// Extraordinary threat to life or property.
         /// </summary>
         Extreme = 1,
+
         /// <summary>
         /// Signifcant threat to life or property.
         /// </summary>
         Severe,
+
         /// <summary>
         /// Possible threat to life or property.
         /// </summary>
         Moderate,
+
         /// <summary>
         /// Minimal threat to life or property.
         /// </summary>
         Minor,
+
         /// <summary>
         /// Severity unknown.
         /// </summary>

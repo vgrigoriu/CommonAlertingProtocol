@@ -31,6 +31,7 @@ namespace CAPNet
             return from alert in alerts
                    select Create(alert);
         }
+
         /// <summary>
         ///
         /// </summary>
@@ -38,12 +39,16 @@ namespace CAPNet
         /// <returns></returns>
         public static XElement Create(Alert alert)
         {
-            if (alert == null) { throw new ArgumentNullException(nameof(alert)); }
+            if (alert == null)
+            {
+                throw new ArgumentNullException(nameof(alert));
+            }
 
             var alertElement = new XElement(CAP12Namespace + "alert");
 
             AddElementIfHasContent(alertElement, "identifier", alert.Identifier);
             AddElementIfHasContent(alertElement, "sender", alert.Sender);
+
             // set milliseconds to 0
             AddElementIfHasContent(alertElement, "sent", StripMiliseconds(alert.Sent));
             AddElement(alertElement, "status", alert.Status);
@@ -67,7 +72,9 @@ namespace CAPNet
         private static DateTimeOffset? StripMiliseconds(DateTimeOffset? date)
         {
             if (date != null)
+            {
                 return date.Value.AddMilliseconds(-date.Value.Millisecond);
+            }
 
             return null;
         }
@@ -85,7 +92,10 @@ namespace CAPNet
         {
             var infoElement = new XElement(CAP12Namespace + "info");
             if (!info.Language.Equals(Info.DefaultLanguage, StringComparison.Ordinal))
+            {
                 infoElement.Add(new XElement(CAP12Namespace + "language", info.Language));
+            }
+
             infoElement.Add(info.Categories.Select(cat => new XElement(CAP12Namespace + "category", cat)));
             AddElementIfHasContent(infoElement, "event", info.Event);
             infoElement.Add(info.ResponseTypes.Select(res => new XElement(CAP12Namespace + "responseType", res)));
@@ -199,7 +209,6 @@ namespace CAPNet
             return from polygon in polygons
                    select new XElement(
                        CAP12Namespace + "polygon", polygon);
-
         }
 
         private static IEnumerable<XElement> Create(IEnumerable<Circle> circles)
@@ -207,7 +216,6 @@ namespace CAPNet
             return from circle in circles
                    select new XElement(
                        CAP12Namespace + "circle", circle);
-
         }
 
         private static void AddElementIfHasContent(XElement parent, string name, byte[] content)
@@ -238,19 +246,25 @@ namespace CAPNet
             where T : class
         {
             if (content != null)
+            {
                 element.Add(new XElement(CAP12Namespace + name, content));
+            }
         }
 
         private static void AddElements(XElement parent, IEnumerable<XElement> elements)
         {
             foreach (XElement element in elements)
+            {
                 parent.Add(element);
+            }
         }
 
         private static void AddElementIfHasContent(XElement parent, string name, string content)
         {
             if (!string.IsNullOrEmpty(content))
+            {
                 parent.Add(new XElement(CAP12Namespace + name, content));
+            }
         }
     }
 }

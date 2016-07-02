@@ -66,7 +66,9 @@ namespace CAPNet.Models
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())
+            {
                 return false;
+            }
 
             var other = (Coordinate)obj;
             return Latitude == other.Latitude && Longitude == other.Longitude;

@@ -13,7 +13,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="area"></param>
         public CeilingExistenceValidator(Area area)
-            : base(area) { }
+            : base(area)
+        {
+        }
 
         /// <summary>
         ///
@@ -23,7 +25,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new CeilingExistenceError();
+                }
             }
         }
 

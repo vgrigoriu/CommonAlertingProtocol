@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="alert"></param>
         public ScopeRequiredValidator(Alert alert)
-            : base(alert) { }
+            : base(alert)
+        {
+        }
 
         /// <summary>
         ///
@@ -24,7 +26,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new ScopeRequiredError();
+                }
             }
         }
 

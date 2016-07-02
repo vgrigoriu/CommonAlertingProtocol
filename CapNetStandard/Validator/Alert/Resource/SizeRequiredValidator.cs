@@ -13,7 +13,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="resource"></param>
         public SizeRequiredWhenUriValidator(Resource resource)
-            : base(resource) { }
+            : base(resource)
+        {
+        }
 
         /// <summary>
         ///
@@ -35,7 +37,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new SizeRequiredError();
+                }
             }
         }
     }

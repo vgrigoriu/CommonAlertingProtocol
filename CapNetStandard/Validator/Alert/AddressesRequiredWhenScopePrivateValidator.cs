@@ -13,7 +13,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="alert"></param>
         public AddressesRequiredWhenScopePrivateValidator(Alert alert)
-            : base(alert) { }
+            : base(alert)
+        {
+        }
 
         /// <summary>
         ///
@@ -37,7 +39,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new AddressesRequiredWhenScopeError();
+                }
             }
         }
     }

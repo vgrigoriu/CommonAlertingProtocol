@@ -14,7 +14,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="resource"></param>
         public DigestValidator(Resource resource)
-            : base(resource) { }
+            : base(resource)
+        {
+        }
 
         /// <summary>
         ///
@@ -24,7 +26,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new DigestError();
+                }
             }
         }
 
@@ -35,7 +39,10 @@ namespace CAPNet
         {
             get
             {
-                if (Entity.Digest == null) return true;
+                if (Entity.Digest == null)
+                {
+                    return true;
+                }
 
                 var digestMatchesHexaDigits = Regex.Match(Entity.Digest, "^[a-fA-F0-9]{40}$");
 

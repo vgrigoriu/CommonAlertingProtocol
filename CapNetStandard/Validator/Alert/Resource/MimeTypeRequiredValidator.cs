@@ -13,7 +13,9 @@ namespace CAPNet
         /// </summary>
         /// <param name="resource"></param>
         public MimeTypeRequiredValidator(Resource resource)
-            : base(resource) { }
+            : base(resource)
+        {
+        }
 
         /// <summary>
         ///
@@ -34,7 +36,9 @@ namespace CAPNet
             get
             {
                 if (!IsValid)
+                {
                     yield return new MimeTypeRequiredError();
+                }
             }
         }
     }
