@@ -1,5 +1,5 @@
-﻿using CAPNet.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CAPNet.Models;
 
 namespace CAPNet
 {
