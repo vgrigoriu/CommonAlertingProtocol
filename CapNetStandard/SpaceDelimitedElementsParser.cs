@@ -35,102 +35,134 @@ namespace CAPNet
             for (currentPosition = 0; currentPosition < representation.Length; currentPosition++)
             {
                 char currentChar = representation[currentPosition];
-                if (currentState == States.BETWEEN_ELEMENTS)
+
+                if (currentChar.IsQuote())
                 {
-                    currentState = BetweenElementsState(currentState, currentChar);
+                    currentState = currentState.OnQuote(this);
                 }
-                else if (currentState == States.IN_ELEMENTS_WITH_NO_SPACE)
+                else if (currentChar.IsSpace())
                 {
-                    currentState = InAddressWithNoSpaceState(currentState, currentChar);
-                }
-                else if (currentState == States.IN_SPACE_CONTAINING_ELEMENTS)
-                {
-                    currentState = InSpaceContainingAddressState(currentState, currentChar);
+                    currentState = currentState.OnSpace(this, currentChar);
                 }
                 else
                 {
-                    throw new SpaceDelimitedElementsParserException($"Invalid parser state: {currentState}");
+                    currentState = currentState.OnOtherCharacter(this, currentChar);
                 }
             }
 
             return elements;
         }
 
-        private States InSpaceContainingAddressState(States currentState, char currentChar)
+        private void AddCurrentElementToList()
         {
-            if (currentChar.IsQuote())
-            {
-                elements.Add(partialElement.ToString());
-                partialElement.Clear();
-                return States.BETWEEN_ELEMENTS;
-            }
+            elements.Add(partialElement.ToString());
+            partialElement.Clear();
+        }
 
+        private void AddToCurrentElement(char currentChar)
+        {
             partialElement.Append(currentChar);
             if (currentPosition == representation.Length - 1)
             {
                 elements.Add(partialElement.ToString());
             }
-
-            return currentState;
         }
 
-        private States InAddressWithNoSpaceState(States currentState, char currentChar)
-        {
-            if (currentChar.IsElementCharacter())
-            {
-                partialElement.Append(currentChar);
-                if (currentPosition == representation.Length - 1)
-                {
-                    elements.Add(partialElement.ToString());
-                }
-
-                return currentState;
-            }
-
-            if (currentChar.IsSpace())
-            {
-                elements.Add(partialElement.ToString());
-                partialElement.Clear();
-                return States.BETWEEN_ELEMENTS;
-            }
-
-            // else: this is an opening quote without a preceding space
-            return currentState;
-        }
-
-        private States BetweenElementsState(States currentState, char currentChar)
-        {
-            if (currentChar.IsQuote())
-            {
-                return States.IN_SPACE_CONTAINING_ELEMENTS;
-            }
-
-            if (currentChar.IsElementCharacter())
-            {
-                partialElement.Append(currentChar);
-                if (currentPosition == representation.Length - 1)
-                {
-                    elements.Add(partialElement.ToString());
-                }
-
-                return States.IN_ELEMENTS_WITH_NO_SPACE;
-            }
-
-            // if the current element is a space, then we're still between elements
-            return currentState;
-        }
-
-        private class States : Enumeration<States>
+        private abstract class States : Enumeration<States>
         {
 #pragma warning disable SA1310 // Field names must not contain underscore
-            public static readonly States BETWEEN_ELEMENTS = new States(0, "Between elements");
-            public static readonly States IN_SPACE_CONTAINING_ELEMENTS = new States(1, "In space containing elements");
-            public static readonly States IN_ELEMENTS_WITH_NO_SPACE = new States(2, "In elements with no space");
+            public static readonly States BETWEEN_ELEMENTS = new BetweenElements();
+            public static readonly States IN_SPACE_CONTAINING_ELEMENTS = new InSpaceContainingElement();
+            public static readonly States IN_ELEMENTS_WITH_NO_SPACE = new InElementWithNoSpace();
 #pragma warning restore SA1310 // Field names must not contain underscore
 
             private States(int value, string displayName)
                 : base(value, displayName)
             {
+            }
+
+            public abstract States OnSpace(SpaceDelimitedElementsParser parser, char currentChar);
+
+            public abstract States OnQuote(SpaceDelimitedElementsParser parser);
+
+            public abstract States OnOtherCharacter(SpaceDelimitedElementsParser parser, char currentChar);
+
+            private class BetweenElements : States
+            {
+                public BetweenElements()
+                    : base(0, "Between elements")
+                {
+                }
+
+                public override States OnOtherCharacter(SpaceDelimitedElementsParser parser, char currentChar)
+                {
+                    parser.AddToCurrentElement(currentChar);
+
+                    return IN_ELEMENTS_WITH_NO_SPACE;
+                }
+
+                public override States OnQuote(SpaceDelimitedElementsParser parser)
+                {
+                    return IN_SPACE_CONTAINING_ELEMENTS;
+                }
+
+                public override States OnSpace(SpaceDelimitedElementsParser parser, char currentChar)
+                {
+                    // we're still between elements
+                    return this;
+                }
+            }
+
+            private class InSpaceContainingElement : States
+            {
+                public InSpaceContainingElement()
+                    : base(1, "In space containing element")
+                {
+                }
+
+                public override States OnOtherCharacter(SpaceDelimitedElementsParser parser, char currentChar)
+                {
+                    parser.AddToCurrentElement(currentChar);
+                    return this;
+                }
+
+                public override States OnQuote(SpaceDelimitedElementsParser parser)
+                {
+                    parser.AddCurrentElementToList();
+                    return BETWEEN_ELEMENTS;
+                }
+
+                public override States OnSpace(SpaceDelimitedElementsParser parser, char currentChar)
+                {
+                    parser.AddToCurrentElement(currentChar);
+                    return this;
+                }
+            }
+
+            private class InElementWithNoSpace : States
+            {
+                public InElementWithNoSpace()
+                    : base(2, "In element with no space")
+                {
+                }
+
+                public override States OnOtherCharacter(SpaceDelimitedElementsParser parser, char currentChar)
+                {
+                    parser.AddToCurrentElement(currentChar);
+                    return this;
+                }
+
+                public override States OnQuote(SpaceDelimitedElementsParser parser)
+                {
+                    // this is an opening quote without a preceding space
+                    return this;
+                }
+
+                public override States OnSpace(SpaceDelimitedElementsParser parser, char currentChar)
+                {
+                    parser.AddCurrentElementToList();
+                    return BETWEEN_ELEMENTS;
+                }
             }
         }
     }
