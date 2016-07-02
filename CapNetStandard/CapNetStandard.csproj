@@ -104,12 +104,12 @@
     <Compile Include="Validator\Alert\MessageTypeRejectionValidator.cs" />
     <Compile Include="Validator\Alert\MessageTypeRequiredValidator.cs" />
     <Compile Include="Validator\Alert\NoteValidator.cs" />
-    <Compile Include="Validator\Alert\Resource\DescriptionRequiredValidator.cs" />
     <Compile Include="Validator\Alert\Resource\DigestValidator.cs" />
     <Compile Include="Validator\Alert\Resource\MimeTypeRequiredValidator.cs" />
     <Compile Include="Validator\Alert\Resource\MimeTypeValidator.cs" />
+    <Compile Include="Validator\Alert\Resource\ResourceDescriptionRequiredValidator.cs" />
     <Compile Include="Validator\Alert\Resource\ResourceValidator.cs" />
-    <Compile Include="Validator\Alert\Resource\SizeRequiredValidator.cs" />
+    <Compile Include="Validator\Alert\Resource\SizeRequiredWhenUriValidator.cs" />
     <Compile Include="Validator\Alert\RestrictionValidator.cs" />
     <Compile Include="Validator\Alert\ScopeRequiredValidator.cs" />
     <Compile Include="Validator\Alert\SenderRequiredValidator.cs" />
@@ -156,7 +156,7 @@
     <Compile Include="Validator\Errors\StatusRequiredError.cs" />
     <Compile Include="Validator\Errors\WGS84Error.cs" />
     <Compile Include="Validator\IValidator.cs" />
-    <Compile Include="Validator\RestrictedCharacters.cs" />
+    <Compile Include="Validator\RestrictedCharactersExtensions.cs" />
     <Compile Include="Validator\Validator.cs" />
     <Compile Include="Version.cs" />
     <Compile Include="XmlCreator.cs" />
