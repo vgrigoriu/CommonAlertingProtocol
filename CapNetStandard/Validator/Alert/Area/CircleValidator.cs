@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="circle"></param>
-        public CircleValidator(Circle circle) : base(circle) { }
+        public CircleValidator(Circle circle)
+            : base(circle) { }
 
         /// <summary>
         ///

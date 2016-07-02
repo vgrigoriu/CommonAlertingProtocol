@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="info"></param>
-        public CertaintyRequiredValidator(Info info) : base(info) { }
+        public CertaintyRequiredValidator(Info info)
+            : base(info) { }
 
         /// <summary>
         ///
@@ -22,7 +23,7 @@ namespace CAPNet
         {
             get
             {
-                return (Enum.IsDefined(typeof(Certainty), Entity.Certainty));
+                return Enum.IsDefined(typeof(Certainty), Entity.Certainty);
             }
         }
 

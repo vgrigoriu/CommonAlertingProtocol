@@ -12,6 +12,7 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="parameter"></param>
-        public ParameterValidator(Parameter parameter) : base(parameter) { }
+        public ParameterValidator(Parameter parameter)
+            : base(parameter) { }
     }
 }

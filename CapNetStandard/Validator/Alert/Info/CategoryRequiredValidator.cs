@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="info"></param>
-        public CategoryRequiredValidator(Info info) : base(info) { }
+        public CategoryRequiredValidator(Info info)
+            : base(info) { }
 
         /// <summary>
         ///

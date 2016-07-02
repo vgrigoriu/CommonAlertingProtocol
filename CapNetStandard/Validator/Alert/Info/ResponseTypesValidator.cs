@@ -15,7 +15,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="info"></param>
-        public ResponseTypesValidator(Info info) : base(info) { }
+        public ResponseTypesValidator(Info info)
+            : base(info) { }
 
         /// <summary>
         ///

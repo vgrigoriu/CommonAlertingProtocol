@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="alert"></param>
-        public MessageTypeRejectionValidator(Alert alert) : base(alert) { }
+        public MessageTypeRejectionValidator(Alert alert)
+            : base(alert) { }
 
         /// <summary>
         ///

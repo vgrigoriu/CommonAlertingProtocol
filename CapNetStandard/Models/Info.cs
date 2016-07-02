@@ -80,7 +80,7 @@ namespace CAPNet.Models
         /// </remarks>
         public string Language
         {
-            get { return String.IsNullOrWhiteSpace(language) ? DefaultLanguage : language; }
+            get { return string.IsNullOrWhiteSpace(language) ? DefaultLanguage : language; }
             set { language = value; }
         }
 

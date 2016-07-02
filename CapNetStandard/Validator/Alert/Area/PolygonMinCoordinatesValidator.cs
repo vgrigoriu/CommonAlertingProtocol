@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="polygon"></param>
-        public PolygonMinCoordinatesValidator(Polygon polygon) : base(polygon) { }
+        public PolygonMinCoordinatesValidator(Polygon polygon)
+            : base(polygon) { }
 
         /// <summary>
         /// A polygon that has 4 coordinate pairs is valid

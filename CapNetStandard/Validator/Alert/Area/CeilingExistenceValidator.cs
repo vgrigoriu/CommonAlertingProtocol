@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="area"></param>
-        public CeilingExistenceValidator(Area area) : base(area) { }
+        public CeilingExistenceValidator(Area area)
+            : base(area) { }
 
         /// <summary>
         ///

@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="polygon"></param>
-        public PolygonWithFirstCoordinatePairEqualToLastCoordinatePairValidator(Polygon polygon) : base(polygon) { }
+        public PolygonWithFirstCoordinatePairEqualToLastCoordinatePairValidator(Polygon polygon)
+            : base(polygon) { }
 
         /// <summary>
         ///

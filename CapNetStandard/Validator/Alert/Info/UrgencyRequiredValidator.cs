@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="info"></param>
-        public UrgencyRequiredValidator(Info info) : base(info) { }
+        public UrgencyRequiredValidator(Info info)
+            : base(info) { }
 
         /// <summary>
         ///

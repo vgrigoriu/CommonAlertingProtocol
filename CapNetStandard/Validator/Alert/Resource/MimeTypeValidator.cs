@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="resource"></param>
-        public MimeTypeValidator(Resource resource) : base(resource) { }
+        public MimeTypeValidator(Resource resource)
+            : base(resource) { }
 
         /// <summary>
         ///

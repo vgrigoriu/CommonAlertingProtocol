@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="alert"></param>
-        public RestrictionValidator(Alert alert) : base(alert) { }
+        public RestrictionValidator(Alert alert)
+            : base(alert) { }
 
         /// <summary>
         ///

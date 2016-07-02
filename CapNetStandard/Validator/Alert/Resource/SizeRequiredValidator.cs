@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="resource"></param>
-        public SizeRequiredWhenUriValidator(Resource resource) : base(resource) { }
+        public SizeRequiredWhenUriValidator(Resource resource)
+            : base(resource) { }
 
         /// <summary>
         ///

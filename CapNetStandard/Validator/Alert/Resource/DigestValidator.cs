@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="resource"></param>
-        public DigestValidator(Resource resource) : base(resource) { }
+        public DigestValidator(Resource resource)
+            : base(resource) { }
 
         /// <summary>
         ///

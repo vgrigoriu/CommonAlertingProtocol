@@ -15,7 +15,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="info"></param>
-        public EventCodesValidator(Info info) : base(info) { }
+        public EventCodesValidator(Info info)
+            : base(info) { }
 
         /// <summary>
         ///

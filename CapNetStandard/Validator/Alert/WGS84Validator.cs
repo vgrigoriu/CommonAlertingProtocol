@@ -17,7 +17,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="coordinate"></param>
-        public WGS84Validator(Coordinate coordinate) : base(coordinate) { }
+        public WGS84Validator(Coordinate coordinate)
+            : base(coordinate) { }
 
         /// <summary>
         ///

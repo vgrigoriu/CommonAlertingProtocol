@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="alert"></param>
-        public IdentifierValidator(Alert alert) : base(alert) { }
+        public IdentifierValidator(Alert alert)
+            : base(alert) { }
 
         /// <summary>
         ///

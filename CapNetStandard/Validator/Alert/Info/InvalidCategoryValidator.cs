@@ -14,7 +14,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="info"></param>
-        public InvalidCategoryValidator(Info info) : base(info) { }
+        public InvalidCategoryValidator(Info info)
+            : base(info) { }
 
         /// <summary>
         ///

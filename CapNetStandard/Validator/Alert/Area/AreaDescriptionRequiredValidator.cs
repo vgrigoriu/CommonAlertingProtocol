@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="area"></param>
-        public AreaDescriptionRequiredValidator(Area area) : base(area) { }
+        public AreaDescriptionRequiredValidator(Area area)
+            : base(area) { }
 
         /// <summary>
         /// Area description should not be null or empty
@@ -21,7 +22,7 @@ namespace CAPNet
         {
             get
             {
-                return !(string.IsNullOrEmpty(Entity.Description));
+                return !string.IsNullOrEmpty(Entity.Description);
             }
         }
 

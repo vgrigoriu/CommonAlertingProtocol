@@ -15,7 +15,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="area"></param>
-        public GeoCodesValidator(Area area) : base(area) { }
+        public GeoCodesValidator(Area area)
+            : base(area) { }
 
         /// <summary>
         ///

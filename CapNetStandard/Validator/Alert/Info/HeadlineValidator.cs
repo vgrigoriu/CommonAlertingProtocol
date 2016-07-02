@@ -14,7 +14,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="info"></param>
-        public HeadlineValidator(Info info) : base(info) { }
+        public HeadlineValidator(Info info)
+            : base(info) { }
 
         /// <summary>
         ///

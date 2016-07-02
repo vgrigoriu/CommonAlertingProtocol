@@ -12,6 +12,7 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="eventCode"></param>
-        public EventCodeValidator(EventCode eventCode) : base(eventCode) { }
+        public EventCodeValidator(EventCode eventCode)
+            : base(eventCode) { }
     }
 }

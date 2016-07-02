@@ -12,7 +12,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="resource"></param>
-        public ResourceDescriptionRequiredValidator(Resource resource) : base(resource) { }
+        public ResourceDescriptionRequiredValidator(Resource resource)
+            : base(resource) { }
 
         /// <summary>
         ///

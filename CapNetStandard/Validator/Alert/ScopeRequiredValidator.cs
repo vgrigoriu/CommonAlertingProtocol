@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="alert"></param>
-        public ScopeRequiredValidator(Alert alert) : base(alert) { }
+        public ScopeRequiredValidator(Alert alert)
+            : base(alert) { }
 
         /// <summary>
         ///

@@ -13,7 +13,8 @@ namespace CAPNet
         ///
         /// </summary>
         /// <param name="responseType"></param>
-        public ResponseTypeValidator(ResponseType responseType) : base(responseType) { }
+        public ResponseTypeValidator(ResponseType responseType)
+            : base(responseType) { }
 
         /// <summary>
         ///
