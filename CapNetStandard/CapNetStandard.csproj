@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="Enumeration.cs" />
     <Compile Include="Models\Alert.cs" />
     <Compile Include="Models\Area.cs" />
     <Compile Include="Models\Category.cs" />
