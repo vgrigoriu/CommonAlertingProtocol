@@ -161,7 +161,6 @@
     <Compile Include="Validator\IValidator.cs" />
     <Compile Include="Validator\RestrictedCharactersExtensions.cs" />
     <Compile Include="Validator\Validator.cs" />
-    <Compile Include="Version.cs" />
     <Compile Include="XmlCreator.cs" />
     <Compile Include="XmlParser.cs" />
   </ItemGroup>
