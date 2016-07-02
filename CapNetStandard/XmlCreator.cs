@@ -22,7 +22,7 @@ namespace CAPNet
         public static XNamespace CAP12Namespace { get; } = "urn:oasis:names:tc:emergency:cap:1.2";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alerts"></param>
         /// <returns></returns>
@@ -32,7 +32,7 @@ namespace CAPNet
                    select Create(alert);
         }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         /// <returns></returns>
@@ -60,7 +60,7 @@ namespace CAPNet
             string incidentsContent = alert.Incidents.ElementsDelimitedBySpace();
             AddElementIfHasContent(alertElement, "incidents", incidentsContent);
             AddElements(alertElement, Create(alert.Info));
-         
+
             return alertElement;
         }
 
@@ -199,7 +199,7 @@ namespace CAPNet
             return from polygon in polygons
                    select new XElement(
                        CAP12Namespace + "polygon", polygon);
-            
+
         }
 
         private static IEnumerable<XElement> Create(IEnumerable<Circle> circles)
@@ -220,7 +220,7 @@ namespace CAPNet
         }
 
         private static void AddElementIfHasContent<T>(XElement element, string name, T? content)
-            where T : struct 
+            where T : struct
         {
             if (content.HasValue)
             {
@@ -229,7 +229,7 @@ namespace CAPNet
         }
 
         private static void AddElement<T>(XElement element, string name, T content)
-            where T : struct 
+            where T : struct
         {
             element.Add(new XElement(CAP12Namespace + name, content));
         }

@@ -9,13 +9,13 @@ namespace CAPNet
     public class IdentifierValidator : Validator<Alert>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         public IdentifierValidator(Alert alert) : base(alert) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

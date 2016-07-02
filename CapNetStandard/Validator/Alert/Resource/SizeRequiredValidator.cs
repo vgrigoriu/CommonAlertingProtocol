@@ -4,18 +4,18 @@ using System.Collections.Generic;
 namespace CAPNet
 {
     /// <summary>
-    /// Resource with uri SHOULD have Size ! 
+    /// Resource with uri SHOULD have Size !
     /// </summary>
     public class SizeRequiredWhenUriValidator : Validator<Resource>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="resource"></param>
         public SizeRequiredWhenUriValidator(Resource resource) : base(resource) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

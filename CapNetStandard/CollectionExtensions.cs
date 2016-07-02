@@ -5,12 +5,12 @@ using System.Linq;
 namespace CAPNet
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class CollectionExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>

@@ -1,7 +1,7 @@
 ﻿namespace CAPNet.Models
 {
     /// <summary>
-    /// The code denoting the intended distribution of the alert message 
+    /// The code denoting the intended distribution of the alert message
     /// </summary>
     public enum Scope
     {
@@ -10,7 +10,7 @@
         /// </summary>
         Public,
         /// <summary>
-        /// For dissemination only to users with a known operational requirement 
+        /// For dissemination only to users with a known operational requirement
         /// </summary>
         Restricted,
         /// <summary>

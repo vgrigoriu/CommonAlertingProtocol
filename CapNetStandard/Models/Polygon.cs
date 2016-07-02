@@ -5,7 +5,7 @@ using System.Linq;
 namespace CAPNet.Models
 {
     /// <summary>
-    /// The paired values of points defining a polygon that delineates the affected area of the alert message 
+    /// The paired values of points defining a polygon that delineates the affected area of the alert message
     /// </summary>
     public class Polygon
     {
@@ -18,7 +18,7 @@ namespace CAPNet.Models
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="stringRepresentation">The geographic polygon is represented by a whitespace-delimited list of [WGS 84] coordinate pairs</param>
         public Polygon(string stringRepresentation)
@@ -32,7 +32,7 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns>whitespace-delimited list of [WGS 84] coordinate pairs</returns>
         public override string ToString()

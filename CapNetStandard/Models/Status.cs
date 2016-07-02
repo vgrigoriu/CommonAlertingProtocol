@@ -1,7 +1,7 @@
 ﻿namespace CAPNet.Models
 {
     /// <summary>
-    /// The code denoting the appropriate handling of the alert message 
+    /// The code denoting the appropriate handling of the alert message
     /// </summary>
     public enum Status
     {

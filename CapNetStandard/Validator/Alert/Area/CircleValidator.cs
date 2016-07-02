@@ -10,13 +10,13 @@ namespace CAPNet
     public class CircleValidator : Validator<Circle>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="circle"></param>
         public CircleValidator(Circle circle) : base(circle) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -28,7 +28,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

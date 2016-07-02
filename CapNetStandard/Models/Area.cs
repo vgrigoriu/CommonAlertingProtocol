@@ -33,7 +33,7 @@ namespace CAPNet.Models
         private readonly ICollection<GeoCode> geoCodes;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Area()
         {

@@ -8,14 +8,14 @@ namespace CAPNet
     public class SpaceDelimitedElementsParserException : Exception
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpaceDelimitedElementsParserException()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public SpaceDelimitedElementsParserException(string message)
@@ -24,7 +24,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>

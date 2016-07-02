@@ -9,13 +9,13 @@ namespace CAPNet
     public class RestrictionValidator : Validator<Alert>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         public RestrictionValidator(Alert alert) : base(alert) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

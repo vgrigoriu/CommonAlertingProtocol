@@ -10,7 +10,7 @@ namespace CAPNet
     public class PolygonMinCoordinatesValidator : Validator<Polygon>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="polygon"></param>
         public PolygonMinCoordinatesValidator(Polygon polygon) : base(polygon) { }
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

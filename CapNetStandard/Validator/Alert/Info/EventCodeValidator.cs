@@ -9,7 +9,7 @@ namespace CAPNet
     public class EventCodeValidator : GeneralNamedValueValidator<EventCode>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="eventCode"></param>
         public EventCodeValidator(EventCode eventCode) : base(eventCode) { }

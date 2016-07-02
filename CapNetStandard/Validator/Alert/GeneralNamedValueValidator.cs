@@ -5,7 +5,7 @@ using CAPNet.Validator.Errors;
 namespace CAPNet.Validator.Alert
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class GeneralNamedValueValidator<T> : Validator<T>
@@ -17,13 +17,13 @@ namespace CAPNet.Validator.Alert
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="namedValue"></param>
         public GeneralNamedValueValidator(T namedValue) : base(namedValue) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -37,7 +37,7 @@ namespace CAPNet.Validator.Alert
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid => Entity.Value != null && Entity.ValueName != null;
     }

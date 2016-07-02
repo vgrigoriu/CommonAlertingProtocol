@@ -5,18 +5,18 @@ using System.Collections.Generic;
 namespace CAPNet
 {
     /// <summary>
-    /// MessageType is required and must have certain values ! 
+    /// MessageType is required and must have certain values !
     /// </summary>
     public class MessageTypeRequiredValidator : Validator<Alert>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         public MessageTypeRequiredValidator(Alert alert) : base(alert) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -28,7 +28,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

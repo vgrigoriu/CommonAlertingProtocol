@@ -1,7 +1,7 @@
 ﻿namespace CAPNet.Models
 {
     /// <summary>
-    /// The code denoting the nature of the alert message 
+    /// The code denoting the nature of the alert message
     /// </summary>
     public enum MessageType
     {

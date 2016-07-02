@@ -10,13 +10,13 @@ namespace CAPNet
     public class DigestValidator : Validator<Resource>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="resource"></param>
         public DigestValidator(Resource resource) : base(resource) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -28,7 +28,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

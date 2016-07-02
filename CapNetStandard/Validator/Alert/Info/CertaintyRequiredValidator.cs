@@ -10,13 +10,13 @@ namespace CAPNet
     public class CertaintyRequiredValidator : Validator<Info>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="info"></param>
         public CertaintyRequiredValidator(Info info) : base(info) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

@@ -9,13 +9,13 @@ namespace CAPNet
     public class SentRequiredValidator : Validator<Alert>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         public SentRequiredValidator(Alert alert) : base(alert) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

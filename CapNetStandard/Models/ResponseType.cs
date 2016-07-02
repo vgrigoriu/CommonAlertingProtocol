@@ -1,7 +1,7 @@
 ﻿namespace CAPNet.Models
 {
     /// <summary>
-    /// The code denoting the type of action recommended for the target audience 
+    /// The code denoting the type of action recommended for the target audience
     /// </summary>
     public enum ResponseType
     {

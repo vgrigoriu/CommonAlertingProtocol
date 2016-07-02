@@ -3,7 +3,7 @@
 namespace CAPNet
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public abstract class Validator<T> : IValidator<T>
@@ -11,7 +11,7 @@ namespace CAPNet
         private readonly T entity;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T Entity
         {
@@ -19,7 +19,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="entity"></param>
         protected Validator(T entity)
@@ -28,7 +28,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public abstract bool IsValid
         {
@@ -36,7 +36,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public abstract IEnumerable<Error> Errors
         {

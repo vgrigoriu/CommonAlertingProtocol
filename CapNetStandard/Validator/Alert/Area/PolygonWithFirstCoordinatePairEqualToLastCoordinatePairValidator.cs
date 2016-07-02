@@ -10,13 +10,13 @@ namespace CAPNet
     public class PolygonWithFirstCoordinatePairEqualToLastCoordinatePairValidator : Validator<Polygon>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="polygon"></param>
         public PolygonWithFirstCoordinatePairEqualToLastCoordinatePairValidator(Polygon polygon) : base(polygon) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {
@@ -29,7 +29,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

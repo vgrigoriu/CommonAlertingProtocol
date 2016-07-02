@@ -6,7 +6,7 @@ namespace CAPNet.Models
     public class NamedValue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="valueName"></param>
         /// <param name="value"></param>
@@ -17,12 +17,12 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Value { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ValueName { get; }
     }

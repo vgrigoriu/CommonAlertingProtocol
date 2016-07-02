@@ -10,13 +10,13 @@ namespace CAPNet
     public class ScopeRequiredValidator : Validator<Alert>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         public ScopeRequiredValidator(Alert alert) : base(alert) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -28,7 +28,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

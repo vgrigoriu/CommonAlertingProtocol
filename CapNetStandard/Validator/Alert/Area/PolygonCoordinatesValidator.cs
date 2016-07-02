@@ -5,18 +5,18 @@ using System.Collections.Generic;
 namespace CAPNet
 {
     /// <summary>
-    ///  The geographic polygon is represented by a whitespace-delimited list of [WGS 84] coordinate pairs. 
+    ///  The geographic polygon is represented by a whitespace-delimited list of [WGS 84] coordinate pairs.
     /// </summary>
     public class PolygonCoordinatesValidator : Validator<Polygon>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="polygon"></param>
         public PolygonCoordinatesValidator(Polygon polygon) : base(polygon) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -32,7 +32,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

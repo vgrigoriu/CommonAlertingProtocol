@@ -3,7 +3,7 @@
 namespace CAPNet.Models
 {
     /// <summary>
-    /// The container for all component parts of the resource sub-element of the info sub-element of the alert element 
+    /// The container for all component parts of the resource sub-element of the info sub-element of the alert element
     /// </summary>
     /// <remarks>
     ///   <list type="number">
@@ -22,7 +22,7 @@ namespace CAPNet.Models
     public class Resource
     {
         /// <summary>
-        /// The text describing the type and content of the resource 
+        /// The text describing the type and content of the resource
         /// </summary>
         /// <remarks>
         ///  <list type="number">
@@ -36,13 +36,13 @@ namespace CAPNet.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// The identifier of the MIME content type and sub-type describing the resource file 
+        /// The identifier of the MIME content type and sub-type describing the resource file
         /// </summary>
         /// <remarks>
         ///   <list type="number">
         ///     <item>
         ///       <description>
-        ///          MIME content type and sub-type as described in [RFC 2046]. 
+        ///          MIME content type and sub-type as described in [RFC 2046].
         ///          (As of this document, the current IANA registered MIME types are listed at http://www.iana.org/assignments/media-types/)
         ///       </description>
         ///     </item>
@@ -51,7 +51,7 @@ namespace CAPNet.Models
         public string MimeType { get; set; }
 
         /// <summary>
-        /// The integer indicating the size of the resource 
+        /// The integer indicating the size of the resource
         /// </summary>
         /// <remarks>
         ///   <list type="number">
@@ -70,13 +70,13 @@ namespace CAPNet.Models
         public int? Size { get; set; }
 
         /// <summary>
-        /// The identifier of the hyperlink for the resource file 
+        /// The identifier of the hyperlink for the resource file
         /// </summary>
         /// <remarks>
         ///   <list type="number">
         ///     <item>
         ///       <description>
-        ///          A full absolute URI, typically a Uniform Resource Locator that can be used to retrieve the resource over the Internet 
+        ///          A full absolute URI, typically a Uniform Resource Locator that can be used to retrieve the resource over the Internet
         ///          OR a relative URI to name the content of a &lt;derefUri> element if one is present in this resource block.
         ///       </description>
         ///     </item>
@@ -91,7 +91,7 @@ namespace CAPNet.Models
         ///   <list type="number">
         ///     <item>
         ///       <description>
-        ///          MAY be used either with or instead of the &lt;uri> element in messages transmitted over one-way (e.g., broadcast) data links 
+        ///          MAY be used either with or instead of the &lt;uri> element in messages transmitted over one-way (e.g., broadcast) data links
         ///          where retrieval of a resource via a URI is not feasible.
         ///       </description>
         ///     </item>
@@ -107,7 +107,7 @@ namespace CAPNet.Models
         ///     </item>
         ///     <item>
         ///       <description>
-        ///           If messages including this element are forwarded onto a two-way network, the forwarder MUST strip the &lt;derefUri> element 
+        ///           If messages including this element are forwarded onto a two-way network, the forwarder MUST strip the &lt;derefUri> element
         ///           and SHOULD extract the file contents and provide a &lt;uri> link to a retrievable version of the file.
         ///       </description>
         ///     </item>
@@ -123,7 +123,7 @@ namespace CAPNet.Models
         public byte[] DereferencedUri { get; set; }
 
         /// <summary>
-        /// The code representing the digital digest (“hash”) computed from the resource file 
+        /// The code representing the digital digest (“hash”) computed from the resource file
         /// </summary>
         /// <remarks>
         ///   <list type="number">

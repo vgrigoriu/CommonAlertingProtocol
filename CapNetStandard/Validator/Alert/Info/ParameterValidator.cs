@@ -9,7 +9,7 @@ namespace CAPNet
     public class ParameterValidator : GeneralNamedValueValidator<Parameter>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parameter"></param>
         public ParameterValidator(Parameter parameter) : base(parameter) { }

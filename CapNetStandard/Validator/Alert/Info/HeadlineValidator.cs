@@ -11,13 +11,13 @@ namespace CAPNet
         private const int maxLengthHeadline = 160;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="info"></param>
         public HeadlineValidator(Info info) : base(info) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -29,7 +29,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

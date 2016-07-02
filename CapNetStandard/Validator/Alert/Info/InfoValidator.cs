@@ -12,17 +12,17 @@ namespace CAPNet
     public class InfoValidator : Validator<Alert>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         public InfoValidator(Alert alert) : base(alert) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
-            get 
+            get
             {
                 return from info in Entity.Info
                        from error in GetErrors(info)
@@ -31,7 +31,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
@@ -47,7 +47,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

@@ -7,12 +7,12 @@ using CAPNet.Models;
 namespace CAPNet
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class XmlParser
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="xml"></param>
         /// <returns></returns>
@@ -25,7 +25,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="xml"></param>
         /// <returns></returns>
@@ -137,7 +137,7 @@ namespace CAPNet
             var senderNode = alertElement.Element(capNamespace + "sender");
             if (senderNode != null)
             {
-                // the standard says: "MUST NOT include spaces, commas or 
+                // the standard says: "MUST NOT include spaces, commas or
                 // restricted characters (< and &)", so we trim it
                 alert.Sender = senderNode.Value.Trim();
             }
@@ -145,7 +145,7 @@ namespace CAPNet
             var identifierNode = alertElement.Element(capNamespace + "identifier");
             if (identifierNode != null)
             {
-                // the standard says: "MUST NOT include spaces, commas or 
+                // the standard says: "MUST NOT include spaces, commas or
                 // restricted characters (< and &)", so we trim it
                 alert.Identifier = identifierNode.Value.Trim();
             }

@@ -10,13 +10,13 @@ namespace CAPNet
     public class ResponseTypeValidator : Validator<ResponseType>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="responseType"></param>
         public ResponseTypeValidator(ResponseType responseType) : base(responseType) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

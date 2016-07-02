@@ -9,7 +9,7 @@ namespace CAPNet
     public class GeoCodeValidator : GeneralNamedValueValidator<GeoCode>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="geoCode"></param>
         public GeoCodeValidator(GeoCode geoCode) : base(geoCode) { }

@@ -12,13 +12,13 @@ namespace CAPNet
     public class GeoCodesValidator : Validator<Area>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="area"></param>
         public GeoCodesValidator(Area area) : base(area) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -31,7 +31,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {
@@ -42,7 +42,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="geoCode"></param>
         /// <returns></returns>

@@ -9,13 +9,13 @@ namespace CAPNet
     public class CeilingExistenceValidator : Validator<Area>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="area"></param>
         public CeilingExistenceValidator(Area area) : base(area) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

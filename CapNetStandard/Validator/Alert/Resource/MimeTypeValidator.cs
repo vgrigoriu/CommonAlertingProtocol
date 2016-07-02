@@ -9,13 +9,13 @@ namespace CAPNet
     public class MimeTypeValidator : Validator<Resource>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="resource"></param>
         public MimeTypeValidator(Resource resource) : base(resource) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -38,7 +38,7 @@ namespace CAPNet
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

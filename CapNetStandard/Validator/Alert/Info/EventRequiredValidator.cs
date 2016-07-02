@@ -9,13 +9,13 @@ namespace CAPNet
     public class EventRequiredValidator : Validator<Info>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="info"></param>
         public EventRequiredValidator(Info info) : base(info) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {
@@ -26,7 +26,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

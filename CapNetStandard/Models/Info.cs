@@ -11,7 +11,7 @@ namespace CAPNet.Models
     ///     <item>
     ///       <description>
     ///          Multiple occurrences are permitted within a single &lt;alert>.
-    ///          If targeting of multiple &lt;info> blocks in the same language overlaps, information in later blocks may expand but may not override the corresponding values in earlier ones. 
+    ///          If targeting of multiple &lt;info> blocks in the same language overlaps, information in later blocks may expand but may not override the corresponding values in earlier ones.
     ///          Each set of &lt;info> blocks containing the same language identifier SHALL be treated as a separate sequence.
     ///       </description>
     ///     </item>
@@ -39,12 +39,12 @@ namespace CAPNet.Models
         private readonly ICollection<ResponseType> responseTypes;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static readonly string DefaultLanguage = "en-US";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Info()
         {
@@ -68,7 +68,7 @@ namespace CAPNet.Models
         ///     </item>
         ///     <item>
         ///       <description>
-        ///          If not present, an implicit default value of "en-US" SHALL be assumed. 
+        ///          If not present, an implicit default value of "en-US" SHALL be assumed.
         ///       </description>
         ///     </item>
         ///     <item>
@@ -85,7 +85,7 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// The codes denoting the type of action recommended for the target audience 
+        /// The codes denoting the type of action recommended for the target audience
         /// </summary>
         /// <remarks>
         ///   <list type="number">
@@ -158,7 +158,7 @@ namespace CAPNet.Models
         public string Event { get; set; }
 
         /// <summary>
-        /// The code denoting the urgency of the subject event of the alert message 
+        /// The code denoting the urgency of the subject event of the alert message
         /// </summary>
         /// <remarks>
         ///   <list type="number">
@@ -174,7 +174,7 @@ namespace CAPNet.Models
         ///            “Expected” - Responsive action SHOULD be taken soon (within next hour)
         ///            “Future” - Responsive action SHOULD be taken in the near future
         ///            “Past” - Responsive action is no longer required
-        ///            “Unknown” - Urgency not known 
+        ///            “Unknown” - Urgency not known
         ///       </description>
         ///     </item>
         ///   </list>
@@ -182,7 +182,7 @@ namespace CAPNet.Models
         public Urgency Urgency { get; set; }
 
         /// <summary>
-        /// The code denoting the severity of the subject event of the alert message 
+        /// The code denoting the severity of the subject event of the alert message
         /// </summary>
         /// <remarks>
         ///   <list type="number">
@@ -206,7 +206,7 @@ namespace CAPNet.Models
         public Severity Severity { get; set; }
 
         /// <summary>
-        /// The code denoting the certainty of the subject event of the alert message 
+        /// The code denoting the certainty of the subject event of the alert message
         /// </summary>
         /// <remarks>
         ///   <list type="number">
@@ -220,7 +220,7 @@ namespace CAPNet.Models
         ///          Code Values:
         ///            “Observed” – Determined to have occurred or to be ongoing
         ///            “Likely” - Likely (p > ~50%)
-        ///            “Possible” - Possible but not likely 
+        ///            “Possible” - Possible but not likely
         ///            “Unlikely” - Not expected to occur (p ~ 0)
         ///            “Unknown” - Certainty unknown
         ///       </description>
@@ -235,24 +235,24 @@ namespace CAPNet.Models
         public Certainty Certainty { get; set; }
 
         /// <summary>
-        /// The text describing the intended audience of the alert message 
+        /// The text describing the intended audience of the alert message
         /// </summary>
         public string Audience { get; set; }
 
         /// <summary>
-        /// The effective time of the information of the alert message 
+        /// The effective time of the information of the alert message
         /// </summary>
         /// <remarks>
         ///   <list type="number">
         ///     <item>
         ///       <description>
-        ///          The date and time SHALL be represented in the DateTime Data Type (See Implementation Notes) 
+        ///          The date and time SHALL be represented in the DateTime Data Type (See Implementation Notes)
         ///          format (e.g., “2002-05-24T16:49:00-07:00” for 24 May 2002 at 16: 49 PDT).
         ///       </description>
         ///     </item>
         ///     <item>
         ///       <description>
-        ///           Alphabetic timezone designators such as “Z” MUST NOT be used. 
+        ///           Alphabetic timezone designators such as “Z” MUST NOT be used.
         ///           The timezone for UTC MUST be represented as “-00:00”.
         ///       </description>
         ///     </item>
@@ -266,7 +266,7 @@ namespace CAPNet.Models
         public DateTimeOffset? Effective { get; set; }
 
         /// <summary>
-        /// The expected time of the beginning of the subject event of the alert message 
+        /// The expected time of the beginning of the subject event of the alert message
         /// </summary>
         /// <remarks>
         ///   <list type="number">
@@ -278,7 +278,7 @@ namespace CAPNet.Models
         ///     </item>
         ///     <item>
         ///       <description>
-        ///          Alphabetic timezone designators such as “Z” MUST NOT be used. 
+        ///          Alphabetic timezone designators such as “Z” MUST NOT be used.
         ///          The timezone for UTC MUST be represented as “-00:00”.
         ///       </description>
         ///     </item>
@@ -287,7 +287,7 @@ namespace CAPNet.Models
         public DateTimeOffset? Onset { get; set; }
 
         /// <summary>
-        /// The expiry time of the information of the alert message 
+        /// The expiry time of the information of the alert message
         /// </summary>
         /// <remarks>
         ///   <list type="number">
@@ -299,8 +299,8 @@ namespace CAPNet.Models
         ///     </item>
         ///     <item>
         ///       <description>
-        ///           Alphabetic timezone designators such as “Z” MUST NOT be used. 
-        ///           The timezone for UTC MUST be represented as “-00:00”. 
+        ///           Alphabetic timezone designators such as “Z” MUST NOT be used.
+        ///           The timezone for UTC MUST be represented as “-00:00”.
         ///       </description>
         ///     </item>
         ///     <item>
@@ -313,7 +313,7 @@ namespace CAPNet.Models
         public DateTimeOffset? Expires { get; set; }
 
         /// <summary>
-        /// The text naming the originator of the alert message 
+        /// The text naming the originator of the alert message
         /// </summary>
         /// <remarks>
         ///  <list type="number">
@@ -327,7 +327,7 @@ namespace CAPNet.Models
         public string SenderName { get; set; }
 
         /// <summary>
-        /// The text headline of the alert message 
+        /// The text headline of the alert message
         /// </summary>
         /// <remarks>
         ///  <list type="number">
@@ -343,7 +343,7 @@ namespace CAPNet.Models
         public string Headline { get; set; }
 
         /// <summary>
-        /// The text describing the subject event of the alert message 
+        /// The text describing the subject event of the alert message
         /// </summary>
         /// <remarks>
         ///  <list type="number">
@@ -357,13 +357,13 @@ namespace CAPNet.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// The text describing the recommended action to be taken by recipients of the alert message 
+        /// The text describing the recommended action to be taken by recipients of the alert message
         /// </summary>
         /// <remarks>
         ///  <list type="number">
         ///    <item>
         ///      <description>
-        ///         An extended human readable instruction to targeted recipients. 
+        ///         An extended human readable instruction to targeted recipients.
         ///         If different instructions are intended for different recipients, they should be represented by use of multiple &lt;info> blocks.
         ///      </description>
         ///    </item>
@@ -372,7 +372,7 @@ namespace CAPNet.Models
         public string Instruction { get; set; }
 
         /// <summary>
-        /// The identifier of the hyperlink associating additional information with the alert message 
+        /// The identifier of the hyperlink associating additional information with the alert message
         /// </summary>
         /// <remarks>
         ///  <list type="number">
@@ -386,7 +386,7 @@ namespace CAPNet.Models
         public Uri Web { get; set; }
 
         /// <summary>
-        /// The text describing the contact for follow-up and confirmation of the alert message 
+        /// The text describing the contact for follow-up and confirmation of the alert message
         /// </summary>
         public string Contact { get; set; }
 
@@ -423,9 +423,9 @@ namespace CAPNet.Models
         {
             get { return parameters; }
         }
-        
+
         /// <summary>
-        /// A system-specific codes identifying the event type of the alert message 
+        /// A system-specific codes identifying the event type of the alert message
         /// </summary>
         /// <remarks>
         ///  <list type="number">
@@ -480,7 +480,7 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// The container for all component parts of the area sub-element of the info sub-element of the alert message 
+        /// The container for all component parts of the area sub-element of the info sub-element of the alert message
         /// </summary>
         /// <remarks>
         ///  <list type="number">
@@ -491,8 +491,8 @@ namespace CAPNet.Models
         ///    </item>
         ///    <item>
         ///      <description>
-        ///          MAY contain one or multiple instances of &lt;polygon>, &lt;circle> or &lt;geocode>.  
-        ///          If multiple &lt;polygon>, &lt;circle> or &lt;geocode>  elements are included, 
+        ///          MAY contain one or multiple instances of &lt;polygon>, &lt;circle> or &lt;geocode>.
+        ///          If multiple &lt;polygon>, &lt;circle> or &lt;geocode>  elements are included,
         ///          the area described by this &lt;area> block is represented by the union of all the included elements.
         ///      </description>
         ///    </item>

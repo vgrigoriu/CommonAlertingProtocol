@@ -7,18 +7,18 @@ using System.Reflection;
 namespace CAPNet
 {
     /// <summary>
-    /// Validates component parts of the area sub-element of the info sub-element of the alert message 
+    /// Validates component parts of the area sub-element of the info sub-element of the alert message
     /// </summary>
     public class AreaValidator : Validator<Info>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="info"></param>
         public AreaValidator(Info info) : base(info) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -31,7 +31,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="area"></param>
         /// <returns></returns>
@@ -47,7 +47,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {

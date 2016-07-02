@@ -4,18 +4,18 @@ using System.Linq;
 namespace CAPNet
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class RestrictedCharactersExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private static readonly IEnumerable<char> RestrictedCharacters =
                                                new[] { ' ', ',', '<', '&' };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>

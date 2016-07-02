@@ -4,7 +4,7 @@ using System.Text;
 namespace CAPNet
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class SpaceDelimitedElementsParser
     {
@@ -21,7 +21,7 @@ namespace CAPNet
         private static string representation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value">Multiple space-delimited elements MAY be included.
         /// Elements including whitespace MUST be enclosed in double-quotes.</param>

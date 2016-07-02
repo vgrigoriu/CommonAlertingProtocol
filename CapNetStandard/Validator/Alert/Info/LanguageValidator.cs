@@ -11,13 +11,13 @@ namespace CAPNet
     public class LanguageValidator : Validator<Info>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="info"></param>
         public LanguageValidator(Info info) : base(info) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -29,7 +29,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// Conditions of validity : 
+        /// Conditions of validity :
         ///     1.Code Values: Natural language identifier per [RFC 3066].
         ///     2.A null value in this element SHALL be considered equivalent to “en-US.”
         /// </summary>

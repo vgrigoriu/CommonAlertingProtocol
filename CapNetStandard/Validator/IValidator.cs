@@ -3,13 +3,13 @@
 namespace CAPNet
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public interface IValidator<T>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         bool IsValid
         {
@@ -17,7 +17,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         T Entity
         {
@@ -25,7 +25,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IEnumerable<Error> Errors
         {

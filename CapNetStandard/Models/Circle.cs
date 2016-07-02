@@ -9,7 +9,7 @@ namespace CAPNet.Models
     public class Circle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="stringRepresentation">The circular area is represented by a central point
         ///  given as a [WGS 84] coordinate pair followed by a space character and a radius value
@@ -23,7 +23,7 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="center"></param>
         /// <param name="radius"></param>
@@ -39,12 +39,12 @@ namespace CAPNet.Models
         public decimal Radius { get; }
 
         /// <summary>
-        /// [WGS 84] coordinate pair 
+        /// [WGS 84] coordinate pair
         /// </summary>
         public Coordinate Center { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns>central point given as a [WGS 84] coordinate pair followed by a space character and a radius value in kilometers</returns>
         public override string ToString()

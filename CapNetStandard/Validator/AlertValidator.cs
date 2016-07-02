@@ -7,7 +7,7 @@ using System.Reflection;
 namespace CAPNet
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AlertValidator
     {
@@ -15,7 +15,7 @@ namespace CAPNet
         private readonly Alert alert;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Alert Alert
         {
@@ -23,7 +23,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         public AlertValidator(Alert alert)
@@ -32,7 +32,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsValid
         {
@@ -43,7 +43,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IEnumerable<Error> Errors
         {
@@ -55,7 +55,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alert"></param>
         /// <returns></returns>

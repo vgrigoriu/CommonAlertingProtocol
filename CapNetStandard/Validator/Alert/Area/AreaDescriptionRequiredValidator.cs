@@ -4,12 +4,12 @@ using System.Collections.Generic;
 namespace CAPNet
 {
     /// <summary>
-    /// A text description of the affected area is required ! 
+    /// A text description of the affected area is required !
     /// </summary>
     public class AreaDescriptionRequiredValidator : Validator<Area>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="area"></param>
         public AreaDescriptionRequiredValidator(Area area) : base(area) { }
@@ -26,7 +26,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {

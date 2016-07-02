@@ -4,12 +4,12 @@ using System.Globalization;
 namespace CAPNet.Models
 {
     /// <summary>
-    ///  [WGS 84] coordinate pair 
+    ///  [WGS 84] coordinate pair
     /// </summary>
     public sealed class Coordinate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="stringRepresentation"></param>
         public Coordinate(string stringRepresentation)
@@ -25,7 +25,7 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
@@ -46,7 +46,7 @@ namespace CAPNet.Models
         public decimal Longitude { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override string ToString()
@@ -59,7 +59,7 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -73,7 +73,7 @@ namespace CAPNet.Models
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()

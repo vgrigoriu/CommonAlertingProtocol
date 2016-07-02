@@ -9,13 +9,13 @@ namespace CAPNet
     public class ResourceDescriptionRequiredValidator : Validator<Resource>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="resource"></param>
         public ResourceDescriptionRequiredValidator(Resource resource) : base(resource) { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override IEnumerable<Error> Errors
         {
@@ -27,7 +27,7 @@ namespace CAPNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool IsValid
         {
