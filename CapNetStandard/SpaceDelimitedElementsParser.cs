@@ -4,15 +4,11 @@ using System.Text;
 namespace CAPNet
 {
     /// <summary>
-    ///
+    /// This class parses a string containing space-delimited elements, e.g.
+    /// «one two "three four"» will be splited into «one», «two», and «three four».
     /// </summary>
     public static class SpaceDelimitedElementsParser
     {
-#pragma warning disable S1450 // Private fields only used as local variables in methods should become local variables
-        // Looks like we could remove this and replace it with a parameter / return value. This should also
-        // fix the if / else if constructions below.
-        private static States currentState;
-#pragma warning restore S1450 // Private fields only used as local variables in methods should become local variables
         private static StringBuilder partialElement;
         private static int currentPosition;
         private static List<string> elements;
@@ -26,17 +22,19 @@ namespace CAPNet
         }
 
         /// <summary>
+        /// Multiple space-delimited elements MAY be included.
+        /// Elements including whitespace MUST be enclosed in double-quotes.
         ///
+        /// See the tests for examples.
         /// </summary>
-        /// <param name="value">Multiple space-delimited elements MAY be included.
-        /// Elements including whitespace MUST be enclosed in double-quotes.</param>
+        /// <param name="value">the string to parse</param>
         /// <returns>Elements in a IEnumerable&lt;string></returns>
         public static IEnumerable<string> GetElements(this string value)
         {
             representation = value;
             elements = new List<string>();
             partialElement = new StringBuilder();
-            currentState = States.BETWEEN_ELEMENTS;
+            var currentState = States.BETWEEN_ELEMENTS;
 
             for (currentPosition = 0; currentPosition < representation.Length; currentPosition++)
             {
@@ -44,15 +42,15 @@ namespace CAPNet
                 switch (currentState)
                 {
                     case States.BETWEEN_ELEMENTS:
-                        BetweenElementsState(currentChar);
+                        currentState = BetweenElementsState(currentState, currentChar);
                         break;
 
                     case States.IN_ELEMENTS_WITH_NO_SPACE:
-                        InAddressWithNoSpaceState(currentChar);
+                        currentState = InAddressWithNoSpaceState(currentState, currentChar);
                         break;
 
                     case States.IN_SPACE_CONTAINING_ELEMENTS:
-                        InSpaceContainingAddressState(currentChar);
+                        currentState = InSpaceContainingAddressState(currentState, currentChar);
                         break;
                     default:
                         throw new SpaceDelimitedElementsParserException($"Invalid parser state: {currentState}");
@@ -62,27 +60,25 @@ namespace CAPNet
             return elements;
         }
 
-        private static void InSpaceContainingAddressState(char currentChar)
+        private static States InSpaceContainingAddressState(States currentState, char currentChar)
         {
-            if (currentChar.IsElementCharacterOrSpace())
-            {
-                partialElement.Append(currentChar);
-                if (currentPosition == representation.Length - 1)
-                {
-                    elements.Add(partialElement.ToString());
-                }
-            }
-#pragma warning disable S126 // "if ... else if" constructs should end with "else" clause
-            else if (currentChar.IsQuote())
-#pragma warning restore S126 // "if ... else if" constructs should end with "else" clause
+            if (currentChar.IsQuote())
             {
                 elements.Add(partialElement.ToString());
                 partialElement.Clear();
-                currentState = States.BETWEEN_ELEMENTS;
+                return States.BETWEEN_ELEMENTS;
             }
+
+            partialElement.Append(currentChar);
+            if (currentPosition == representation.Length - 1)
+            {
+                elements.Add(partialElement.ToString());
+            }
+
+            return currentState;
         }
 
-        private static void InAddressWithNoSpaceState(char currentChar)
+        private static States InAddressWithNoSpaceState(States currentState, char currentChar)
         {
             if (currentChar.IsElementCharacter())
             {
@@ -91,34 +87,41 @@ namespace CAPNet
                 {
                     elements.Add(partialElement.ToString());
                 }
+
+                return currentState;
             }
-#pragma warning disable S126 // "if ... else if" constructs should end with "else" clause
-            else if (currentChar.IsSpace())
-#pragma warning restore S126 // "if ... else if" constructs should end with "else" clause
+
+            if (currentChar.IsSpace())
             {
                 elements.Add(partialElement.ToString());
                 partialElement.Clear();
-                currentState = States.BETWEEN_ELEMENTS;
+                return States.BETWEEN_ELEMENTS;
             }
+
+            // else: this is an opening quote without a preceding space
+            return currentState;
         }
 
-        private static void BetweenElementsState(char currentChar)
+        private static States BetweenElementsState(States currentState, char currentChar)
         {
             if (currentChar.IsQuote())
             {
-                currentState = States.IN_SPACE_CONTAINING_ELEMENTS;
+                return States.IN_SPACE_CONTAINING_ELEMENTS;
             }
-#pragma warning disable S126 // "if ... else if" constructs should end with "else" clause
-            else if (currentChar.IsElementCharacter())
-#pragma warning restore S126 // "if ... else if" constructs should end with "else" clause
+
+            if (currentChar.IsElementCharacter())
             {
-                currentState = States.IN_ELEMENTS_WITH_NO_SPACE;
                 partialElement.Append(currentChar);
                 if (currentPosition == representation.Length - 1)
                 {
                     elements.Add(partialElement.ToString());
                 }
+
+                return States.IN_ELEMENTS_WITH_NO_SPACE;
             }
+
+            // if the current element is a space, then we're still between elements
+            return currentState;
         }
 
         private static bool IsElementCharacter(this char tested)
@@ -134,11 +137,6 @@ namespace CAPNet
         private static bool IsQuote(this char tested)
         {
             return tested == '"';
-        }
-
-        private static bool IsElementCharacterOrSpace(this char tested)
-        {
-            return tested.IsElementCharacter() || tested.IsSpace();
         }
     }
 }
